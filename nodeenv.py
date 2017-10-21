@@ -1340,7 +1340,8 @@ function deactivate_node -d 'Exit nodeenv and return to normal environment.'
     end
 
     if test -n "$_OLD_NODE_FISH_PROMPT_OVERRIDE"
-        # Set an empty local `$fish_function_path` to allow the removal of `fish_prompt` using `functions -e`.
+        # Set an empty local `$fish_function_path` to allow the removal of
+        # `fish_prompt` using `functions -e`.
         set -l fish_function_path
 
         # Erase virtualenv's `fish_prompt` and restore the original.
@@ -1432,8 +1433,7 @@ if test -z "$NODE_VIRTUAL_ENV_DISABLE_PROMPT"
 
     set -gx _OLD_NODE_FISH_PROMPT_OVERRIDE "$NODE_VIRTUAL_ENV"
 end
-
-"""
+"""  # noqa
 
 PREDEACTIVATE_SH = """
 if type -p deactivate_node > /dev/null; then deactivate_node;fi
